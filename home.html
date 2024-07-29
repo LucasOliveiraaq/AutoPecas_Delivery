@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <title>AutoPeças Delivery</title>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <header class="bg-white shadow">
+        <div class="container mx-auto px-4 py-6 flex justify-between items-center">
+            <div class="text-3xl font-bold text-gray-900">AutoPeças Delivery</div>
+            <nav class="space-x-4">
+                <a href="#" class="text-gray-900">Início</a>
+                <a href="#" class="text-gray-900">Loja</a>
+                <a href="#" class="text-gray-900">Sobre</a>
+                <a href="#" class="text-gray-900">Páginas</a>
+                <a href="#" class="text-gray-900">Blog</a>
+                <a href="#" class="text-gray-900">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="mt-0">
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <img src="https://celioautopecas.com.br/wp-content/uploads/2022/02/Celio-Banner-1.png" alt="Slide 1" class="w-full h-auto">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://celioautopecas.com.br/wp-content/uploads/2022/02/Celio-Banner-2.png" alt="Slide 2" class="w-full h-auto">
+                </div>
+                <div class="swiper-slide">
+                    <img src="https://celioautopecas.com.br/wp-content/uploads/2022/02/Celio-Banner-2-2.png" alt="Slide 3" class="w-full h-auto">
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </section>
+
+    <main class="container mx-auto px-4 py-6">
+        <section>
+            <h2 class="text-2xl font-bold mb-4">Peças</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <img src="https://images.tcdn.com.br/img/img_prod/1041490/turbina_polo_highline_200_tsi_2019_04c145702j_28645_1_e30ac44f6549896ece09989c1cc43413.jpg" alt="Product 1" class="w-full h-48 object-cover mb-4">
+                    <h3 class="text-lg font-bold">Turbina</h3>
+                    <p class="text-gray-700">R$250.00</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <img src="https://images.tcdn.com.br/img/img_prod/1041490/turbina_polo_highline_200_tsi_2019_04c145702j_28645_1_e30ac44f6549896ece09989c1cc43413.jpg" alt="Product 2" class="w-full h-48 object-cover mb-4">
+                    <h3 class="text-lg font-bold">Turbina</h3>
+                    <p class="text-gray-700">R$250.00</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <img src="https://images.tcdn.com.br/img/img_prod/1041490/turbina_polo_highline_200_tsi_2019_04c145702j_28645_1_e30ac44f6549896ece09989c1cc43413.jpg" alt="Product 3" class="w-full h-48 object-cover mb-4">
+                    <h3 class="text-lg font-bold">Turbina</h3>
+                    <p class="text-gray-700">R$250.00</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mt-8">
+            <h2 class="text-2xl font-bold mb-4">Featured Items</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <img src="https://images.tcdn.com.br/img/img_prod/1041490/turbina_polo_highline_200_tsi_2019_04c145702j_28645_1_e30ac44f6549896ece09989c1cc43413.jpg" alt="Featured Product 1" class="w-full h-48 object-cover mb-4">
+                    <h3 class="text-lg font-bold">Turbina</h3>
+                    <p class="text-gray-700">R$250.00</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <img src="https://images.tcdn.com.br/img/img_prod/1041490/turbina_polo_highline_200_tsi_2019_04c145702j_28645_1_e30ac44f6549896ece09989c1cc43413.jpg" alt="Featured Product 2" class="w-full h-48 object-cover mb-4">
+                    <h3 class="text-lg font-bold">Turbina</h3>
+                    <p class="text-gray-700">R$250.00</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md">
+                    <img src="https://images.tcdn.com.br/img/img_prod/1041490/turbina_polo_highline_200_tsi_2019_04c145702j_28645_1_e30ac44f6549896ece09989c1cc43413.jpg" alt="Featured Product 3" class="w-full h-48 object-cover mb-4">
+                    <h3 class="text-lg font-bold">Turbina</h3>
+                    <p class="text-gray-700">R$250.00</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+        var swiper = new Swiper('.swiper-container', {
+            loop: true,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+        });
+    </script>
+</body>
+</html>
