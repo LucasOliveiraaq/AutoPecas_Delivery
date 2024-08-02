@@ -48,3 +48,17 @@
         --ring: 240 4.9% 83.9%;
     }
 }
+
+
+body {
+    overflow-x: hidden;
+}
+.swiper-pagination-bullet {
+    background: transparent;
+    border: 1px solid #fff;
+    opacity: 0.5;
+}
+.swiper-pagination-bullet-active {
+    background: #fff;
+    opacity: 1;
+}
