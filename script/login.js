@@ -1,26 +1,30 @@
-const menuToggle = document.getElementById('menu-toggle');
-const menu = document.getElementById('menu');
-const mobileMenu = document.getElementById('mobile-menu');
+document.getElementById('login-form').addEventListener('submit', async function(event) {
+    event.preventDefault();
 
-//index.html
-const swiper = new Swiper('.swiper-container', {
-    loop: true,
-    autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-});
+    //campo precisa ser o mesmo nome que vai receber por parametro no back-end
+    const login = document.getElementById('username').value;
+    const senha = document.getElementById('password').value;
 
-/*
-  Quando tiver mobile ou responsivo vai incluir o mobile-menu 
-  e vai abrir um opção a baixo com opções do menu
+    try {
+        const response = await fetch('http://localhost:8080/usuario/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ login, senha })
+        });
 
-  index.html
-*/
-menuToggle.addEventListener('click', () => {
-    mobileMenu.classList.toggle('hidden');
+        if (response.ok) {
+            const data = await response.json();
+            console.log('Login bem-sucedido:', data);
+
+            localStorage.setItem('authToken', data.token);
+            window.location.href = 'index.html';
+        } else {
+            alert('Falha no login. Verifique seu usuário e senha.');
+        }
+    } catch (error) {
+        console.error('Erro ao fazer login:', error);
+        alert('Erro de conexão. Tente novamente mais tarde.');
+    }
 });

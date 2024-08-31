@@ -13,7 +13,7 @@
         <div class="bg-white rounded-lg shadow-lg p-8 w-96">
             <h1 class="text-xl font-bold mb-2">Bem vindo ao <span class="text-blue-500">AutoPeças Delivery</span></h1>
             <p class="text-muted-foreground mb-6">Preencha os dados do login para acessar</p>
-            <form>
+            <form id="login-form">
                 <div class="mb-4">
                     <label class="block text-sm font-medium text-zinc-700" for="username">Usuário</label>
                     <input class="mt-1 block w-full border border-zinc-300 rounded-md p-2" type="text" id="username" required>
@@ -22,8 +22,8 @@
                     <label class="block text-sm font-medium text-zinc-700" for="password">Senha</label>
                     <input class="mt-1 block w-full border border-zinc-300 rounded-md p-2" type="password" id="password" required>
                 </div>
-                <button class="bg-blue-500 text-white w-full py-2 rounded-lg hover:bg-blue-600">ENTRAR</button>
-            </form>
+                <button class="bg-blue-500 text-white w-full py-2 rounded-lg hover:bg-blue-600" type="submit">ENTRAR</button>
+            </form>            
             <p class="mt-4 text-center text-sm">
                 Ainda não tem uma conta? 
                 <a href="registro.html" class="text-blue-500 hover:underline">Registre-se</a>
