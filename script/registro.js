@@ -1,23 +1,38 @@
-/*
-   Validar se os password tem coincidência, se estiver tudo certo vai salvar no localstorage 
-   e direcionar para pagina de login.
-   
-   registro.html
-*/
-document.getElementById('registerForm').addEventListener('submit', function(event) {
+document.getElementById('registerForm').addEventListener('submit', async function(event) {
     event.preventDefault();
-    const username = document.getElementById('username').value;
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const passwordConfirmed = document.getElementById('passwordConfirmed').value;
 
-    if (password !== passwordConfirmed) {
+    const login = document.getElementById('username').value;
+    const senha = document.getElementById('password').value;
+    const passwordConfirmed = document.getElementById('passwordConfirmed').value;
+    const email = document.getElementById('email').value;
+
+    if (senha !== passwordConfirmed) {
         alert('As senhas não coincidem');
         return;
     }
 
-    const user = { username, email, password };
-    localStorage.setItem('user', JSON.stringify(user));
-    alert('Usuário registrado com sucesso');
-    window.location.href = 'login.html';
+    try {
+        const response = await fetch('http://localhost:8080/usuario/login/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ login, senha, email })
+        });
+
+        const responseText = await response.text();  
+
+        if (response.ok) {
+            console.log('Registro bem-sucedido:', responseText);
+            alert(responseText);
+
+            window.location.href = 'login.html';
+        } else {
+            console.error('Falha no registro:', responseText);
+            alert('Falha no registro: ' + responseText);
+        }
+    } catch (error) {
+        console.error('Erro ao fazer o registro do usuário:', error);
+        alert('Erro de conexão. Tente novamente mais tarde.');
+    }
 });
